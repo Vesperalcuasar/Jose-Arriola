@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Packing Report</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="widtd=device-widtd, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
+<!--===============================================================================================-->
+<style type="text/css">
+	label{
+		font-size: 10px;
+	}
+	td {
+        text-align: right;
+        border-top: 0px !important;
+    }
+    
+</style>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-box100">
+			<div class="wrap-seller">
+				<div class="row">
+					<div class="col-12 text-center">
+						<h5>Packing Line</h5>
+					</div>
+				</div>
+				<div class="row">
+				    <div class="col-2"></div>
+					<div class="col-8">
+					    <div class="row">
+					    <div class="table-responsive">
+					        <table class="table">
+					            <tr>
+					                <td>
+					                    <label>View Day Shift Data</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td>
+					                    <label>View Hourly Report</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td>
+					                    <label>View Weekly Report</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td>
+					                    <label>View Yearly Report</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td>
+					                    <label>Packing Schedule</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td><button class="my-btn">Select Date</button></td>
+					            </tr>
+					            <tr>
+					                <td>
+					                    <label>View Night Shift</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td>
+					                    <label>View Daily Report</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td>
+					                    <label>View Monthly Report</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td>
+					                    <label>Prior Week Comparison</label>&nbsp;&nbsp;<input type="checkbox" class="mycheckbox" name="">
+					                </td>
+					                <td></td>
+					                <td><button class="my-btn">Select Report</button></td>
+					            </tr>
+					        </table>
+					    </div>
+					    </div>
+					</div>
+				</div>
+				<!--end checkboxes-->
+				
+				<div class="row">
+				    <div class="col-12">
+				            
+				            <div class="row">
+    					    <div class="table-responsive">
+    					        <table class="table">
+    					            <tr>
+    					                <td>
+    					                    <div class="col-sm">
+    					                        <label><b>Lbs/Hour</b></label>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Current Pounds</label>
+    					                        <p>4583.3</p>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Goal of the Day</label>
+    					                        <p>84000</p>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Day Shift</label>
+    					                        <p>4583.3</p>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Night Shift</label>
+    					                        <p>8160.0</p>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>TOTAL LBS PER HOUR PACKED TODAY</label>
+    					                        <p>12784.33</p>
+    					                    </div>
+    					                </td>
+    					                <td>
+    					                    <canvas id="myChart1" width="1241" height="400"></canvas> 
+    					                </td>
+    					           </tr>
+    					       </table>
+    					   </div>
+				        </div>
+				        
+				        
+				            <div class="row">
+    					    <div class="table-responsive">
+    					        <table class="table">
+    					            <tr>
+    					                <td>
+    					                    <div class="col-sm">
+    					                        <label><b>Lbs/Day</b></label>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Weekly Total</label>
+    					                        <p>31400.0</p>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Day Shift</label>
+    					                        <p>1100.0</p>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Night Shift</label>
+    					                        <p>8160.0</p>
+    					                    </div>
+    					                    <div class="col-sm">
+    					                        <label>Daily Total</label>
+    					                        <p>19160.0</p>
+    					                    </div>
+    					                </td>
+    					                <td>
+    					                    <canvas id="myChart" width="1241" height="400"></canvas> 
+    					                </td>
+    					           </tr>
+    					       </table>
+    					   </div>
+				        </div>
+				        <div class="row">
+				            <div class="col-12 text-center">
+				                <button class="my-btn" onclick="location.reload();">Refresh</button>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"> 
+</script> 
+<script>
+
+
+var ctx = document.getElementById("myChart");
+var ctx1 = document.getElementById("myChart1");
+var myChart = new Chart(ctx, { 
+  type: 'bar', 
+  data: { 
+    labels: ["", "" , "" , "", "", ""], 
+    datasets: [ 
+      { label: 'Shift', 
+        data: [31400,11000,8160,19160], 
+        backgroundColor :['rgba(255, 99, 132, 0.2)', 
+                'rgba(54, 162, 235, 0.2)', 
+                'rgba(255, 206, 86, 0.2)', 
+                'rgba(75, 192, 192, 0.2)'
+], 
+  
+borderColor: [ 
+                'rgba(255,99,132,1)', 
+                'rgba(54, 162, 235, 1)', 
+                'rgba(255, 206, 86, 1)', 
+                'rgba(75, 192, 192, 1)' 
+            ], 
+borderWidth : 1 
+      } 
+    ] 
+  }, 
+  options: { 
+        scales: { 
+            yAxes: [{ 
+                ticks: { 
+                    beginAtZero:true 
+                } 
+            }] 
+        } 
+    } 
+}); 
+
+var myChart1 = new Chart(ctx1, { 
+  type: 'bar', 
+  data: { 
+    labels: ["", "" , "" , "", "", "", ""], 
+    datasets: [ 
+      { label: 'Shift', 
+        data: [4583.3,84000,4583.3,8160.0,12784.33], 
+        backgroundColor :['rgba(255, 99, 132, 0.2)', 
+                'rgba(54, 162, 235, 0.2)', 
+                'rgba(255, 206, 86, 0.2)', 
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+], 
+  
+borderColor: [ 
+                'rgba(255,99,132,1)', 
+                'rgba(54, 162, 235, 1)', 
+                'rgba(255, 206, 86, 1)', 
+                'rgba(75, 192, 192, 1)', 
+                'rgba(255, 206, 86, 1)'
+            ], 
+borderWidth : 1 
+      } 
+    ] 
+  }, 
+  options: { 
+        scales: { 
+            yAxes: [{ 
+                ticks: { 
+                    beginAtZero:true 
+                } 
+            }] 
+        } 
+    } 
+}); 
+</script>
+</body>
+</html>
