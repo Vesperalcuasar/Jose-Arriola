@@ -11,7 +11,7 @@
                         Add user as Admin
                     </div>
                     <div class="col-2">
-                        <input type="checkbox" class="user-input" name="type">
+                        <input type="checkbox" class="user-input" name="is_admin">
                     </div>
                 </div>
                 <div class="row">
@@ -19,8 +19,8 @@
                         <label>User ID</label>
                     </div>
                     <div class="col-8">
-                        <div class="user-input100 validate-input" data-validate = "Enter Valid User Id">
-                            <input class="user-input" type="text" name="user_id">
+                        <div class="user-input100 validate-input" data-validate="Enter Valid User Id">
+                            <input class="user-input" type="text" name="user_id" required minlength="4">
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
 							<span class="btn-show-pass">
 								<i class="zmdi zmdi-eye"></i>
 							</span>
-                            <input class="user-input" type="password" name="pass">
+                            <input class="user-input" type="password" name="pass" required minlength="4">
                         </div>
                     </div>
                 </div>
@@ -59,25 +59,33 @@
                             <td>1</td>
                             <td>Jose DM</td>
                             <td>Admin</td>
-                            <td><button class="delete-btn">Delete</button></td>
+                            <td>
+                                <button class="delete-btn">Delete</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Carlos</td>
                             <td>Admin</td>
-                            <td><button class="delete-btn">Delete</button></td>
+                            <td>
+                                <button class="delete-btn">Delete</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Usama</td>
                             <td>User</td>
-                            <td><button class="delete-btn">Delete</button></td>
+                            <td>
+                                <button class="delete-btn">Delete</button>
+                            </td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Juana</td>
                             <td>Admin</td>
-                            <td><button class="delete-btn">Delete</button></td>
+                            <td>
+                                <button class="delete-btn">Delete</button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
@@ -85,7 +93,9 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <a href="main-screen.html"><button class="delete-btn">Next</button></a>
+                    <a href="main-screen.html">
+                        <button class="delete-btn">Next</button>
+                    </a>
                 </div>
             </div>
         </div>

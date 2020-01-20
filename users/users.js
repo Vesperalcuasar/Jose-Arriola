@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function () {
+    // ajax request fot submitting add user form data
     $('form#add-user-form').submit(function (event) {
         event.preventDefault();
         var data = $('form#add-user-form').serializeArray();
@@ -12,7 +13,14 @@ $(document).ready(function () {
             data: data,
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                if (!data.success) {
+                    $('.modal-body p').text(data.error);
+                    $('.modal-title').text('Oops!');
+                } else {
+                    $('.modal-title').text('Congratulations!');
+                    $('.modal-body p').text(data.message);
+                }
+                $('#messageModal').modal('show');
             }
         });
     });

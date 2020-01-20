@@ -36,8 +36,10 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
 } else {
-    include 'users/users.php';
+    include 'login/login.php';
 }
+
+include 'modals.php';
 ?>
 
 <!--	<div id="dropDownSelect1"></div>-->
@@ -58,7 +60,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 <script src="js/main.js"></script>
-
+<!--===============================================================================================-->
 <script src="users/users.js"></script>
 
 </body>
