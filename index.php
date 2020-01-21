@@ -34,7 +34,7 @@ session_start();
 <body>
 <?php
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
+    include 'users/index.php';
 } else {
     include 'login/login.php';
 }
@@ -62,6 +62,8 @@ include 'modals.php';
 <script src="js/main.js"></script>
 <!--===============================================================================================-->
 <script src="users/users.js"></script>
+<!--===============================================================================================-->
+<script src="login/login.js"></script>
 
 </body>
 </html>

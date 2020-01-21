@@ -13,6 +13,9 @@
                     <div class="col-2">
                         <input type="checkbox" class="user-input" name="is_admin">
                     </div>
+                    <div class="col-3">
+                        <a href="users/logout.php">Logout</a>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-4">

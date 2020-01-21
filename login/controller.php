@@ -1,9 +1,10 @@
 <?php
+session_start();
 include 'model.php';
-$model = new AddUsers();
+$model = new Login();
 
 if (isset($_POST['action'])) {
-    $result = $model->addUser($_POST);
-    return $result;
+    $result = $model->validateUser($_POST);
+    echo json_encode($result);
 } else
     die('go away');
