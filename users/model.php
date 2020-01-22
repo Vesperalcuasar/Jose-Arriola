@@ -12,6 +12,7 @@ class Users
         $this->config = new Config();
         $this->conn = $this->config->makeConnection();
     }
+
     // add new user in the database
     function addUser($data)
     {
@@ -29,5 +30,14 @@ class Users
                 $response['error'] = 'Something wrong happened, please try again';
         }
         return $response;
+    }
+
+    function getUsers()
+    {
+        $flag = 0;
+        $stmt = $this->conn->prepare("SELECT id,user_name,is_admin FROM users where is_deleted = :flag");
+        $stmt->bindParam(':flag', $flag);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 }

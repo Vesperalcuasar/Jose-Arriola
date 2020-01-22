@@ -1,4 +1,4 @@
-<div class="limiter">
+<div class="limiter users-list">
     <div class="container-box100">
         <div class="wrap-box100">
 				<span class="login100-form-title p-b-48">
@@ -58,38 +58,6 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Jose DM</td>
-                            <td>Admin</td>
-                            <td>
-                                <button class="delete-btn">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Carlos</td>
-                            <td>Admin</td>
-                            <td>
-                                <button class="delete-btn">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Usama</td>
-                            <td>User</td>
-                            <td>
-                                <button class="delete-btn">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Juana</td>
-                            <td>Admin</td>
-                            <td>
-                                <button class="delete-btn">Delete</button>
-                            </td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
