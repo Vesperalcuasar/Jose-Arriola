@@ -34,10 +34,34 @@ class Users
 
     function getUsers()
     {
-        $flag = 0;
-        $stmt = $this->conn->prepare("SELECT id,user_name,is_admin FROM users where is_deleted = :flag");
-        $stmt->bindParam(':flag', $flag);
-        $stmt->execute();
-        return $stmt->fetchAll();
+        $response = array('success' => false);
+        if (!$this->conn)
+            $response['error'] = 'Database connection failed';
+        else {
+            $flag = 0;
+            $stmt = $this->conn->prepare("SELECT id,user_name,is_admin FROM users where is_deleted = :flag");
+            $stmt->bindParam(':flag', $flag);
+            $stmt->execute();
+            $response['users'] = $stmt->fetchAll();
+            $response['success'] = true;
+        }
+        return $response;
+    }
+
+    function deleteUser($data)
+    {
+        $response = array('success' => false);
+        if (!$this->conn)
+            $response['error'] = 'Database connection failed';
+        else {
+            $stmt = $this->conn->prepare("UPDATE users set is_deleted = 1 where id = :id");
+            $stmt->bindParam(':id', $data['id']);
+            if ($stmt->execute()) {
+                $response['message'] = 'User is deleted successfully';
+                $response['success'] = true;
+            } else
+                $response['error'] = 'Something wrong happened, please try again';
+        }
+        return $response;
     }
 }

@@ -14,6 +14,11 @@ if (isset($_REQUEST['action'])) {
             $result = $model->getUsers();
             echo json_encode($result);
             break;
+        case 'delete-user':
+            // delete user
+            $result = $model->deleteUser($_POST);
+            echo json_encode($result);
+            break;
     }
 } else
     die('go away');
