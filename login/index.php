@@ -1,3 +1,8 @@
+<?php
+if(!file_exists('auth.php')){
+    include('../auth.php');
+}
+?>
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">

@@ -23,7 +23,7 @@ class Users
             $password_hash = password_hash($data['pass'], PASSWORD_BCRYPT);
             $sql = "INSERT INTO users (user_name,password,is_admin) VALUES (?,?,?)";
             $stmt = $this->conn->prepare($sql);
-            if ($stmt->execute([$data['user_id'], $password_hash, isset($data['is_admin'])])) {
+            if ($stmt->execute([$data['user_id'], $password_hash, isset($data['is_admin']) ? 1 : 0])) {
                 $response['message'] = 'New user is added successfully';
                 $response['success'] = true;
             } else

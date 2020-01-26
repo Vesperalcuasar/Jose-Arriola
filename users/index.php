@@ -1,3 +1,10 @@
+<?php
+if(file_exists('auth.php')){
+    include('auth.php');
+}else{
+    include('../auth.php');
+}
+?>
 <div class="limiter users-list">
     <div class="container-box100">
         <div class="wrap-box100">

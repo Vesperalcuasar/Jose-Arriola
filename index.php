@@ -36,7 +36,7 @@ session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     include 'users/index.php';
 } else {
-    include 'login/login.php';
+    include 'login/index.php';
 }
 
 include 'modals.php';
