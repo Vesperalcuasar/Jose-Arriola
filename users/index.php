@@ -71,7 +71,7 @@ if(file_exists('auth.php')){
             </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <a href="main-screen.html">
+                    <a href="dashboard">
                         <button class="delete-btn">Next</button>
                     </a>
                 </div>
