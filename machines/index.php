@@ -22,7 +22,7 @@ if (file_exists('auth.php')) {
             <div class="container-box100-form-btn">
                 <div class="wrap-box100-form-btn">
                     <div class="box100-form-bgbtn"></div>
-                    <a href="sheller-selected.html">
+                    <a href="sheller-operator.php">
                         <button class="box100-form-btn">
                             SHELLER
                         </button>
