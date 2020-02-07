@@ -156,7 +156,6 @@ if (file_exists('auth.php')) {
                                             <input class="user-input" type="text" name="">
                                         </div>
                                     </td>
-
                                     <td></td>
                                     <td>
                                         <div class="user-input100 validate-input">
@@ -199,221 +198,91 @@ if (file_exists('auth.php')) {
                                     <td></td>
                                     <td>
                                         <button class="my-btn">Small& Pieces</button>
+                                        <input class="dynamic-inputs" id="small-pieces" type="text" name="">
                                     </td>
 
                                     <td></td>
                                     <td>
                                         <button class="my-btn">Medium Pieces</button>
+                                        <input class="dynamic-inputs" id="medium-pieces" type="text" name="">
                                     </td>
 
                                     <td></td>
                                     <td>
                                         <button class="my-btn">Large Pieces</button>
+                                        <input class="dynamic-inputs" id="large-pieces" type="text" name="">
                                     </td>
 
                                     <td></td>
                                     <td>
                                         <button class="my-btn">Halves and Pieces</button>
+                                        <input class="dynamic-inputs" id="halves-pieces" type="text" name="">
                                     </td>
 
                                     <td></td>
                                     <td>
                                         <button class="my-btn">Topping Pieces</button>
+                                        <input class="dynamic-inputs" id="topping-pieces" type="text" name="">
                                     </td>
 
                                     <td></td>
                                     <td>
                                         <button class="my-btn">Oil Stock</button>
+                                        <input class="dynamic-inputs" id="oil-stock" type="text" name="">
                                     </td>
 
                                     <td></td>
                                     <td>
                                         <button class="my-btn">Blower Boxes</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td>07:00:00</td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
-                                    </td>
-                                    <td></td>
-                                    <td>
-                                        <div class="user-input100 validate-input">
-                                            <input class="user-input" type="text" name="">
-                                        </div>
+                                        <input class="dynamic-inputs" id="blower-boxes" type="text" name="">
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
+                            <div class="row dynamic-row">
+                                <div>
+                                    <table class="table small-pieces dynamic-tables">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table medium-pieces dynamic-tables">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table large-pieces dynamic-tables">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table halves-pieces dynamic-tables">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table topping-pieces dynamic-tables">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table oil-stock dynamic-tables">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <table class="table blower-boxes dynamic-tables">
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,22 @@
 .show-count {
     visibility: hidden;
 }
+
+.dynamic-inputs {
+    outline: auto;
+    width: 100px;
+}
+
+.dynamic-row {
+    margin: 0;
+    flex-wrap: initial;
+}
+
+.dynamic-tables {
+    width: 180px;
+}
+
+.dynamic-tables td {
+    padding-left: 3px;
+    padding-right: 3px;
+}
