@@ -70,7 +70,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input" type="text" name="">
+                                <input class="user-input" type="text" name="total-bins">
                             </div>
                         </div>
                     </div>
