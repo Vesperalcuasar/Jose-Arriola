@@ -40,7 +40,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input" type="text" name="">
+                                <input class="user-input" value="<?php echo date('Y-m-d'); ?>" type="date" name="date" readonly>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input" type="text" name="">
+                                <input class="user-input" type="text" name="variety">
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input" type="text" name="">
+                                <input class="user-input" type="text" name="lot-number">
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input" type="text" name="">
+                                <input class="user-input" type="number" name="production-minutes" readonly>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input" type="text" name="">
+                                <input class="user-input" type="number" name="production-hours" readonly>
                             </div>
                         </div>
                     </div>
