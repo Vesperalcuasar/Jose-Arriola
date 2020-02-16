@@ -16,17 +16,6 @@
         var totalBins = $("input[name = 'total-bins']");
         totalBins.val(machine.totalBins);
     }
-    //update production minutes and hours fields continously
-    function updateContinuousTime(startTime) {
-        machine.startTime = startTime;
-        setInterval(function () {
-            var diff = new Date(machine.currentTime - machine.startTime);
-            var minutes = diff / 1000 / 60;
-            var hours = diff / 1000 / 60 / 60;
-            $("input[name=production-minutes]").val(parseFloat(minutes).toFixed(2));
-            $("input[name=production-hours]").val(parseFloat(hours).toFixed(2));
-        }, 1000);
-    }
 
     //formatting time with additional 0 digit
     function checkTime(i) {
@@ -38,18 +27,18 @@
     // start a timer
     function startTime() {
         var today = new Date();
-        if (machine.startTime === 0) {
-            updateContinuousTime(today);
-        }
         var h = today.getHours();
         var m = today.getMinutes();
         var s = today.getSeconds();
         m = checkTime(m);
         s = checkTime(s);
-        setTimeout(startTime, 500);
         if (clock === 1) {
             $(".time").val(h + ":" + m + ":" + s);
-            machine.currentTime = today;
+            setTimeout(startTime, 1000);
+            //update production minutes and hours fields continously
+            machine.currentTime += 1;
+            $("input[name=production-minutes]").val(parseFloat(machine.currentTime / 60).toFixed(2));
+            $("input[name=production-hours]").val(parseFloat(machine.currentTime / 3600).toFixed(2));
         }
     }
     //start timer on right side starting from current time once user clicked on start button
