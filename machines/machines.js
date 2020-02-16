@@ -14,6 +14,48 @@
     //update form data based on global data settings
     function updateFormData() {
         var totalBins = $("input[name = 'total-bins']");
+        var poundsSmallPieces = $("input[name=small-pieces-pounds]");
+        var poundsMediumPieces = $("input[name=medium-pieces-pounds]");
+        var poundsLargerPieces = $("input[name=large-pieces-pounds]");
+        var poundsHalvesPieces = $("input[name=halves-pieces-pounds]");
+        var poundsToppingPieces = $("input[name=topping-pieces-pounds]");
+        var poundsOilStock = $("input[name=oil-stock-pounds]");
+        var poundsBlowerBoxes = $("input[name=blower-boxes-pounds]");
+        var count = 0;
+        $("table.small-pieces tbody tr").each(function () {
+            count += parseFloat($(this).find("input").val());
+        });
+        poundsSmallPieces.val(count);
+        count = 0;
+        $("table.medium-pieces tbody tr").each(function () {
+            count += parseFloat($(this).find("input").val());
+        });
+        poundsMediumPieces.val(count);
+        count = 0;
+        $("table.large-pieces tbody tr").each(function () {
+            count += parseFloat($(this).find("input").val());
+        });
+        poundsLargerPieces.val(count);
+        count = 0;
+        $("table.halves-pieces tbody tr").each(function () {
+            count += parseFloat($(this).find("input").val());
+        });
+        poundsHalvesPieces.val(count);
+        count = 0;
+        $("table.topping-pieces tbody tr").each(function () {
+            count += parseFloat($(this).find("input").val());
+        });
+        poundsToppingPieces.val(count);
+        count = 0;
+        $("table.oil-stock tbody tr").each(function () {
+            count += parseFloat($(this).find("input").val());
+        });
+        poundsOilStock.val(count);
+        count = 0;
+        $("table.blower-boxes tbody tr").each(function () {
+            count += parseFloat($(this).find("input").val());
+        });
+        poundsBlowerBoxes.val(count);
         totalBins.val(machine.totalBins);
     }
 
@@ -67,16 +109,16 @@
         } else {
             keycode = event.which;
         }
-        if (keycode === 13) {
+        if (keycode === 13 && $(this).val() !== "") {
             machine.totalBins += 1;
-            updateFormData();
             var td = "<tr>";
             td += "<td>07:00:00</td>";
             td += "<td>";
             td += "<div class=\"user-input100 validate-input\">";
-            td += "<input class=\"user-input\" type=\"text\" name=\"\">";
+            td += "<input class=\"user-input\" readonly type=\"number\" value='" + $(this).val() + "' name=\"\">";
             td += "</div></td></tr>";
             $("table." + id + " tbody").append(td);
+            updateFormData();
         }
     });
 
