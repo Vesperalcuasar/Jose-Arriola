@@ -102,7 +102,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input sheller-input" type="text" name="">
+                                <input class="user-input sheller-input" type="text" placeholder="Name" name="sheller-operator-name">
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input sheller-input" type="text" name="">
+                                <input class="user-input sheller-input" type="text" name="sheller-pound-per-hour" readonly>
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,7 @@ if (file_exists('auth.php')) {
                         </div>
                         <div class="col-sm">
                             <div class="user-input100 validate-input">
-                                <input class="user-input" type="text" name="">
+                                <input class="user-input" type="number" name="goal-of the day">
                             </div>
                         </div>
                     </div>

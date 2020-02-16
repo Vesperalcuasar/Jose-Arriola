@@ -13,6 +13,8 @@
 
     //update form data based on global data settings
     function updateFormData() {
+        var count = 0;
+        var totalPounds = 0;
         var totalBins = $("input[name = 'total-bins']");
         var poundsSmallPieces = $("input[name=small-pieces-pounds]");
         var poundsMediumPieces = $("input[name=medium-pieces-pounds]");
@@ -21,31 +23,36 @@
         var poundsToppingPieces = $("input[name=topping-pieces-pounds]");
         var poundsOilStock = $("input[name=oil-stock-pounds]");
         var poundsBlowerBoxes = $("input[name=blower-boxes-pounds]");
-        var count = 0;
+        var shellerPoundPerHour = $("input[name=sheller-pound-per-hour]");
         $("table.small-pieces tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
         });
         poundsSmallPieces.val(count);
+        totalPounds += count;
         count = 0;
         $("table.medium-pieces tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
         });
         poundsMediumPieces.val(count);
+        totalPounds += count;
         count = 0;
         $("table.large-pieces tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
         });
         poundsLargerPieces.val(count);
+        totalPounds += count;
         count = 0;
         $("table.halves-pieces tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
         });
         poundsHalvesPieces.val(count);
+        totalPounds += count;
         count = 0;
         $("table.topping-pieces tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
         });
         poundsToppingPieces.val(count);
+        totalPounds += count;
         count = 0;
         $("table.oil-stock tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
@@ -57,6 +64,9 @@
         });
         poundsBlowerBoxes.val(count);
         totalBins.val(machine.totalBins);
+        if (parseFloat($("input[name=production-hours]").val()) >= 1) {
+            shellerPoundPerHour.val(totalPounds / parseFloat($("input[name=production-hours]").val()));
+        }
     }
 
     //formatting time with additional 0 digit
@@ -110,9 +120,16 @@
             keycode = event.which;
         }
         if (keycode === 13 && $(this).val() !== "") {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
             machine.totalBins += 1;
+            var time = h + ":" + m + ":" + s;
             var td = "<tr>";
-            td += "<td>07:00:00</td>";
+            td += "<td>" + time + "</td>";
             td += "<td>";
             td += "<div class=\"user-input100 validate-input\">";
             td += "<input class=\"user-input\" readonly type=\"number\" value='" + $(this).val() + "' name=\"\">";
