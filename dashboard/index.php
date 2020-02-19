@@ -19,6 +19,9 @@ if(file_exists('auth.php')){
 <div class="limiter">
     <div class="container-box100">
         <div class="wrap-box100">
+            <?php if( (int)$_SESSION["user"]["is_admin"] === 0 ) { ?>
+                <a href="../users/logout.php">Logout</a>
+            <?php } ?>
             <div class="container-box100-form-btn">
                 <div class="wrap-box100-form-btn">
                     <div class="box100-form-bgbtn"></div>

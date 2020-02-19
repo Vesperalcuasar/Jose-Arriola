@@ -1,5 +1,8 @@
 <?php
-if(file_exists('auth.php')){
+if((int)$_SESSION["user"]["is_admin"] === 0 ) {
+    header("Location: dashboard");
+}
+else if(file_exists('auth.php')){
     include('auth.php');
 }else{
     include('../auth.php');

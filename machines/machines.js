@@ -138,6 +138,20 @@
             updateFormData();
         }
     });
+    //form submit for saving machine data in database using ajax call
+    $("form#machine-form").on("submit", function (e) {
+        e.preventDefault();
+        var data = $("form#machine-form").serializeArray();
+        $.ajax({
+            url: "controller.php",
+            type: "post",
+            data: data,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    });
 
     //initialize settings
     updateFormData();
