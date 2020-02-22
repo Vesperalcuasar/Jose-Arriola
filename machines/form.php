@@ -6,6 +6,9 @@ if (file_exists('auth.php')) {
     include('../auth.php');
 }
 $machineType = "";
+$title = "Day Shift";
+$formName = "Sheller Operator";
+$poundsPerHour = "Sheller Pound Per Hour";
 if(isset($_GET["machine"])) {
     switch ($_GET["machine"]) {
         case "sheller":
@@ -13,15 +16,25 @@ if(isset($_GET["machine"])) {
             break;
         case "sheller-bsi":
             $machineType = "sheller-bsi";
+            $title = "Sheller BSI-LS900 Day Shift";
+            $formName = "Laser Operator";
+            $poundsPerHour = "Sheller BSI-LS9000 Pounds Per Hour";
             break;
         case "bsi-ls":
             $machineType = "bsi-ls";
+            $title = "Sheller BSI-LS900 Day Shift";
+            $formName = "Laser Operator";
+            $poundsPerHour = "Sheller BSI-LS9000 Pounds Per Hour";
             break;
         case "helius":
             $machineType = "helius";
+            $formName = "Laser Operator";
+             $poundsPerHour = "Helius Pounds Per Hour";
             break;
         case "packing-line":
             $machineType = "packing-line";
+            $formName = "Packing Line Lead";
+            $poundsPerHour = "Packing Line Pounds Per Hour";
             break;
         default :
             header("Location: ../dashboard");
@@ -35,7 +48,7 @@ else {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sheller Selected</title>
+    <title>Machine</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
     <!--Includes Css files ===============================================================================================-->
@@ -49,7 +62,7 @@ else {
             <div class="wrap-seller">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h5>Day Shift</h5>
+                        <h5><?php echo $title; ?> </h5>
                     </div>
                 </div>
                 <div class="row">
@@ -73,6 +86,19 @@ else {
                                 </div>
                             </div>
                         </div>
+                        <?php if($machineType == "packing-line") { ?>
+                          <div class="row">
+                            <div class="col-sm">
+                                <label>Product Type</label>
+                            </div>
+                            <div class="col-sm">
+                                <div class="user-input100 validate-input">
+                                    <input class="user-input" type="text"
+                                           name="product-type">
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                         <div class="row">
                             <div class="col-sm">
                                 <label>Variety</label>
@@ -93,6 +119,18 @@ else {
                                 </div>
                             </div>
                         </div>
+                           <?php if($machineType == "packing-line") { ?>
+                        <div class="row">
+                            <div class="col-sm">
+                                <label>Total Pallets Produced</label>
+                            </div>
+                            <div class="col-sm">
+                                <div class="user-input100 validate-input">
+                                    <input class="user-input" type="text" name="total-pallets" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
                         <div class="row">
                             <div class="col-sm">
                                 <label>Total bins produced</label>
@@ -103,6 +141,30 @@ else {
                                 </div>
                             </div>
                         </div>
+                        <?php if($machineType == "sheller-bsi" || $machineType == "bsi-ls" || $machineType == "helius" || $machineType == "packing-line") { ?>
+                        <div class="row">
+                            <div class="col-sm">
+                                <label>Off-Grade Bins</label>
+                            </div>
+                            <div class="col-sm">
+                                <div class="user-input100 validate-input">
+                                    <input class="user-input" type="text" name="off-grade-bins" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                              <?php if($machineType == "packing-line") { ?>
+                        <div class="row">
+                            <div class="col-sm">
+                                <label>Case Weight</label>
+                            </div>
+                            <div class="col-sm">
+                                <div class="user-input100 validate-input">
+                                    <input class="user-input" type="number" name="case-weight">
+                                </div>
+                            </div>
+                        </div>
+                        <?php } ?>
                         <div class="row">
                             <div class="col-sm">
                                 <label>Production Minutes</label>
@@ -127,7 +189,7 @@ else {
                     <div class="col-sm">
                         <div class="row sheller-input1">
                             <div class="col-sm">
-                                <label>Sheller Operator</label>
+                                <label><?php echo $formName; ?></label>
                             </div>
                             <div class="col-sm">
                                 <div class="user-input100 validate-input">
@@ -138,11 +200,11 @@ else {
                         </div>
                         <div class="row">
                             <div class="col-sm">
-                                <button class="add-btn">Sheller Pound Per Hour</button>
+                                <button class="add-btn"><?php echo $poundsPerHour; ?></button>
                             </div>
                             <div class="col-sm">
                                 <div class="user-input100 validate-input">
-                                    <input class="user-input sheller-input" type="text" name="sheller-pound-per-hour"
+                                    <input class="user-input sheller-input" type="text" name="pounds-per-hour"
                                            readonly>
                                 </div>
                             </div>

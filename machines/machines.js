@@ -11,21 +11,68 @@
         currentTime: 0,
         totalPounds: 0
     };
+    //get URL machine parameter
+    function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split("&");
+        var sParameterName;
+        var i;
+
+        for (i = 0; i < sURLVariables.length; i += 1) {
+            sParameterName = sURLVariables[i].split("=");
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined
+                    ? true
+                    : decodeURIComponent(sParameterName[1]);
+            }
+        }
+    }
+    machine.machineType = getUrlParameter("machine");
 
     //update form data based on global data settings
     function updateFormData(id) {
         var count = 0;
+        var offGradeBins = 0;
+        var totalPallets = 0;
         var field = $("input[name=" + id + "]");
         var totalBins = $("input[name = 'total-bins']");
-        var shellerPoundPerHour = $("input[name=sheller-pound-per-hour]");
+        var offGradeBinsField = $("input[name = 'off-grade-bins']");
+        var totalPalletsField = $("input[name = 'total-pallets']");
+        var shellerPoundPerHour = $("input[name=pounds-per-hour]");
         var tableClass = id.split("-pounds");
         tableClass = tableClass[0];
         $("table." + tableClass + " tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
+            //count off grade bins numbers
+            if ((machine.machineType === "sheller-bsi" || machine.machineType === "bsi-ls" || machine.machineType === "helius") && tableClass !== "accepts") {
+                offGradeBins += parseFloat($(this).find("input").val());
+            }
+            //count total pallets number for Packing line machine
+            if (machine.machineType === "packing-line" && tableClass === "pallet-weight") {
+                totalPallets += parseFloat($(this).find("input").val());
+            }
+            //count off grades number for packing line machine
+            if ((machine.machineType === "packing-line") && tableClass === "blower-box") {
+                offGradeBins += parseFloat($(this).find("input").val());
+            }
         });
         field.val(count);
         machine.totalPounds += count;
         totalBins.val(machine.totalBins);
+        //update off grade bin field
+        if ((machine.machineType === "sheller-bsi" || machine.machineType === "bsi-ls" || machine.machineType === "helius") && tableClass !== "accepts") {
+            offGradeBinsField.val(offGradeBins);
+        }
+        //update off grade bin field for packing line machine
+        if (machine.machineType === "packing-line" && tableClass === "blower-box") {
+            offGradeBinsField.val(offGradeBins);
+        }
+        //update total pallets for packing line machine
+        if (machine.machineType === "packing-line" && tableClass === "pallet-weight") {
+            totalPalletsField.val(totalPallets);
+        }
+        //calculate total pounds per hour
         if (parseFloat($("input[name=production-hours]").val()) >= 1) {
             shellerPoundPerHour.val(machine.totalPounds / parseFloat($("input[name=production-hours]").val()));
         }
