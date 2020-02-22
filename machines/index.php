@@ -22,7 +22,7 @@ if (file_exists('auth.php')) {
             <div class="container-box100-form-btn">
                 <div class="wrap-box100-form-btn">
                     <div class="box100-form-bgbtn"></div>
-                    <a href="sheller-operator.php">
+                    <a href="form.php?machine=sheller">
                         <button class="box100-form-btn">
                             SHELLER
                         </button>
@@ -33,7 +33,7 @@ if (file_exists('auth.php')) {
             <div class="container-box100-form-btn">
                 <div class="wrap-box100-form-btn">
                     <div class="box100-form-bgbtn"></div>
-                    <a href="sheller-bsi.html">
+                    <a href="form.php?machine=sheller-bsi">
                         <button class="box100-form-btn">
                             Sheller BSI-LS 9000
                         </button>
@@ -44,7 +44,7 @@ if (file_exists('auth.php')) {
             <div class="container-box100-form-btn">
                 <div class="wrap-box100-form-btn">
                     <div class="box100-form-bgbtn"></div>
-                    <a href="sheller-bsi.html">
+                    <a href="form.php?machine=bsi-ls">
                         <button class="box100-form-btn">
                             BSI-LS 9000
                         </button>
@@ -55,7 +55,7 @@ if (file_exists('auth.php')) {
             <div class="container-box100-form-btn">
                 <div class="wrap-box100-form-btn">
                     <div class="box100-form-bgbtn"></div>
-                    <a href="helius-screen.html">
+                    <a href="form.php?machine=helius">
                         <button class="box100-form-btn">
                             Helius
                         </button>
@@ -66,7 +66,7 @@ if (file_exists('auth.php')) {
             <div class="container-box100-form-btn">
                 <div class="wrap-box100-form-btn">
                     <div class="box100-form-bgbtn"></div>
-                    <a href="packing-line.html">
+                    <a href="form.php?machine=packing-line">
                         <button class="box100-form-btn">
                             Packing Line
                         </button>

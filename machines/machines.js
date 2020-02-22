@@ -8,64 +8,26 @@
     var machine = {
         totalBins: 0,
         startTime: 0,
-        currentTime: 0
+        currentTime: 0,
+        totalPounds: 0
     };
 
     //update form data based on global data settings
-    function updateFormData() {
+    function updateFormData(id) {
         var count = 0;
-        var totalPounds = 0;
+        var field = $("input[name=" + id + "]");
         var totalBins = $("input[name = 'total-bins']");
-        var poundsSmallPieces = $("input[name=small-pieces-pounds]");
-        var poundsMediumPieces = $("input[name=medium-pieces-pounds]");
-        var poundsLargerPieces = $("input[name=large-pieces-pounds]");
-        var poundsHalvesPieces = $("input[name=halves-pieces-pounds]");
-        var poundsToppingPieces = $("input[name=topping-pieces-pounds]");
-        var poundsOilStock = $("input[name=oil-stock-pounds]");
-        var poundsBlowerBoxes = $("input[name=blower-boxes-pounds]");
         var shellerPoundPerHour = $("input[name=sheller-pound-per-hour]");
-        $("table.small-pieces tbody tr").each(function () {
+        var tableClass = id.split("-pounds");
+        tableClass = tableClass[0];
+        $("table." + tableClass + " tbody tr").each(function () {
             count += parseFloat($(this).find("input").val());
         });
-        poundsSmallPieces.val(count);
-        totalPounds += count;
-        count = 0;
-        $("table.medium-pieces tbody tr").each(function () {
-            count += parseFloat($(this).find("input").val());
-        });
-        poundsMediumPieces.val(count);
-        totalPounds += count;
-        count = 0;
-        $("table.large-pieces tbody tr").each(function () {
-            count += parseFloat($(this).find("input").val());
-        });
-        poundsLargerPieces.val(count);
-        totalPounds += count;
-        count = 0;
-        $("table.halves-pieces tbody tr").each(function () {
-            count += parseFloat($(this).find("input").val());
-        });
-        poundsHalvesPieces.val(count);
-        totalPounds += count;
-        count = 0;
-        $("table.topping-pieces tbody tr").each(function () {
-            count += parseFloat($(this).find("input").val());
-        });
-        poundsToppingPieces.val(count);
-        totalPounds += count;
-        count = 0;
-        $("table.oil-stock tbody tr").each(function () {
-            count += parseFloat($(this).find("input").val());
-        });
-        poundsOilStock.val(count);
-        count = 0;
-        $("table.blower-boxes tbody tr").each(function () {
-            count += parseFloat($(this).find("input").val());
-        });
-        poundsBlowerBoxes.val(count);
+        field.val(count);
+        machine.totalPounds += count;
         totalBins.val(machine.totalBins);
         if (parseFloat($("input[name=production-hours]").val()) >= 1) {
-            shellerPoundPerHour.val(totalPounds / parseFloat($("input[name=production-hours]").val()));
+            shellerPoundPerHour.val(machine.totalPounds / parseFloat($("input[name=production-hours]").val()));
         }
     }
 
@@ -135,7 +97,7 @@
             td += "<input class=\"user-input\" readonly type=\"number\" value='" + $(this).val() + "' name=\"\">";
             td += "</div></td></tr>";
             $("table." + id + " tbody").append(td);
-            updateFormData();
+            updateFormData(id + "-pounds");
         }
     });
     //form submit for saving machine data in database using ajax call
@@ -152,7 +114,4 @@
             }
         });
     });
-
-    //initialize settings
-    updateFormData();
 }(jQuery));

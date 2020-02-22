@@ -5,6 +5,7 @@
 .dynamic-inputs {
     outline: auto;
     width: 100px;
+    display: block;
 }
 
 .dynamic-row {
