@@ -148,17 +148,52 @@
         }
     });
     //form submit for saving machine data in database using ajax call
-    $("form#machine-form").on("submit", function (e) {
-        e.preventDefault();
-        var data = $("form#machine-form").serializeArray();
-        $.ajax({
-            url: "controller.php",
-            type: "post",
-            data: data,
-            dataType: "json",
-            success: function (data) {
-                console.log(data);
+    $(".add-btn").on("click", function () {
+        var data = [];
+        var pounds = [];
+        $(".dynamic-tables").each(function (ind) {
+            var table = $(this).attr("class").split(" ")[1];
+            var tr = $(this).find("tr");
+            if (tr.length > 0) {
+                pounds.push({table: []});
+                var count = 0;
+                $(this).find("tr").each(function () {
+                    var date = $(this).find("td").first().text();
+                    var value = parseFloat($(this).find("td").last().find("input").val());
+                    count += value;
+                    pounds[ind].table.total = count;
+                    pounds[ind].table.name = table;
+                    pounds[ind].table.push({date: date, value: value});
+                });
             }
         });
+        data.push({
+            pounds: JSON.stringify(pounds),
+            date: $("input[name='date']").val(),
+            productType: $("input[name='product-type']").val(),
+            variety: $("input[name='variety']").val(),
+            lotNumber: $("input[name='lot-number']").val(),
+            totalPallets: $("input[name='total-pallets']").val(),
+            totalBins: $("input[name='total-bins']").val(),
+            offGradeBins: $("input[name='off-grade-bins']").val(),
+            caseWeight: $("input[name='case-weight']").val(),
+            productionMinutes: $("input[name='production-minutes']").val(),
+            productionHours: $("input[name='production-hours']").val(),
+            name: $("input[name='name']").val(),
+            poundsPerHour: $("input[name='pounds-per-hour']").val(),
+            goalOfTheDay: $("input[name='goal-of the day']").val(),
+            machineType: $("input[name='machine-type']").val(),
+            action: $("input[name='action']").val()
+        });
+        console.log(data);
+        // $.ajax({
+        //     url: "controller.php",
+        //     type: "post",
+        //     data: data,
+        //     dataType: "json",
+        //     success: function (data) {
+        //         console.log(data);
+        //     }
+        // });
     });
 }(jQuery));

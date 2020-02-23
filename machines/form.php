@@ -55,8 +55,8 @@ else {
     <?php include '../includes/css.php'; ?>
 </head>
 <body>
-<form type="post" action="#" id="machine-form">
     <input class="input100" type="text" hidden name="action" value="save-machine">
+    <input class="input100" type="text" hidden name="machine-type" value="<?php echo $machineType; ?>">
     <div class="limiter">
         <div class="container-box100">
             <div class="wrap-seller">
@@ -194,7 +194,7 @@ else {
                             <div class="col-sm">
                                 <div class="user-input100 validate-input">
                                     <input class="user-input sheller-input" type="text" placeholder="Name"
-                                           name="sheller-operator-name">
+                                           name="name">
                                 </div>
                             </div>
                         </div>
@@ -269,7 +269,6 @@ else {
                     </div>
                 </div>
             </div>
-</form>
 
 <div id="dropDownSelect1"></div>
 
