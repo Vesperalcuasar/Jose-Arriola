@@ -148,7 +148,7 @@
         }
     });
     //form submit for saving machine data in database using ajax call
-    $(".add-btn").on("click", function () {
+    $(".save-data").on("click", function () {
         var data = [];
         var pounds = [];
         $(".dynamic-tables").each(function (ind) {
@@ -185,15 +185,21 @@
             machineType: $("input[name='machine-type']").val(),
             action: $("input[name='action']").val()
         });
-        console.log(data);
-        // $.ajax({
-        //     url: "controller.php",
-        //     type: "post",
-        //     data: data,
-        //     dataType: "json",
-        //     success: function (data) {
-        //         console.log(data);
-        //     }
-        // });
+        $.ajax({
+            url: "controller.php",
+            type: "post",
+            data: {data: data},
+            dataType: "json",
+            success: function (data) {
+                if (!data.success) {
+                    $(".modal-body p").text(data.error);
+                    $(".modal-title").text("Oops!");
+                } else {
+                    $(".modal-title").text("Congratulations!");
+                    $(".modal-body p").text(data.message);
+                }
+                $("#messageModal").modal("show");
+            }
+        });
     });
 }(jQuery));

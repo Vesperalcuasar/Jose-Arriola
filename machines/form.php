@@ -216,7 +216,7 @@ else {
                                 <?php if ((int)$_SESSION["user"]["is_admin"] === 1) { ?>
                                     <button class="add-btn">Edit</button>
                                 <?php } ?>
-                                <input type="submit" class="add-btn">
+                                <input type="submit" class="add-btn save-data">
                                 <button class="close-btn">Close</button>
                             </div>
                         </div>
@@ -271,7 +271,8 @@ else {
             </div>
 
 <div id="dropDownSelect1"></div>
-
+<!--Include bootstrap modal to show messages ===============================================================================================-->
+<?php include '../modals.php'; ?>
 <!--Include JSs files===============================================================================================-->
 <?php include '../includes/js.php' ?>
 </body>

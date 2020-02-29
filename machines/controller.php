@@ -1,9 +1,13 @@
 <?php
-if (isset($_REQUEST['action'])) {
-    switch ($_REQUEST['action']) {
+include 'model.php';
+$model = new machine();
+
+if (isset($_POST["data"][0]["action"])) {
+    switch ($_POST["data"][0]["action"]) {
         case 'save-machine':
             //save submitted machine data in the database
-            echo 'saved';
+            $result = $model->create($_POST["data"][0]);
+            echo json_encode($result);
             break;
     }
 } else
