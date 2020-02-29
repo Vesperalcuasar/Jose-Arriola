@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 pounds-section">
         <div class="row">
             <div class="table-responsive">
                 <table class="table">

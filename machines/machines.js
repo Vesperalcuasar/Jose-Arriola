@@ -149,6 +149,10 @@
     });
     //form submit for saving machine data in database using ajax call
     $(".save-data").on("click", function () {
+        $(".loader").show();
+        $(".save-data").attr("disabled", true);
+        $(".save-data, .edit-btn").hide();
+        $(".main-container").css({"opacity": "0.5"});
         var data = [];
         var pounds = [];
         $(".dynamic-tables").each(function (ind) {
@@ -191,6 +195,8 @@
             data: {data: data},
             dataType: "json",
             success: function (data) {
+                $(".main-container").css({"opacity": "1"});
+                $(".loader").hide();
                 if (!data.success) {
                     $(".modal-body p").text(data.error);
                     $(".modal-title").text("Oops!");

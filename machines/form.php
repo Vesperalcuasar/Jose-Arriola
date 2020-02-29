@@ -57,7 +57,8 @@ else {
 <body>
     <input class="input100" type="text" hidden name="action" value="save-machine">
     <input class="input100" type="text" hidden name="machine-type" value="<?php echo $machineType; ?>">
-    <div class="limiter">
+    <div class="limiter main-container">
+        <div class="loader"></div>
         <div class="container-box100">
             <div class="wrap-seller">
                 <div class="row">
@@ -214,10 +215,10 @@ else {
                         <div class="row top-button">
                             <div class="col-12 text-right">
                                 <?php if ((int)$_SESSION["user"]["is_admin"] === 1) { ?>
-                                    <button class="add-btn">Edit</button>
+                                    <button class="add-btn edit-btn">Edit</button>
                                 <?php } ?>
                                 <input type="submit" class="add-btn save-data">
-                                <button class="close-btn">Close</button>
+                                <a class="close-btn" href="../index.php">Close</a>
                             </div>
                         </div>
                         <div class="row show-count">
@@ -265,7 +266,7 @@ else {
                 </div>
                 <div class="row">
                     <div class="col-12 text-center">
-                        <button class="add-btn">Finish</button>
+                        <a class="add-btn finish-btn" href="../index.php">Finish</a>
                     </div>
                 </div>
             </div>
