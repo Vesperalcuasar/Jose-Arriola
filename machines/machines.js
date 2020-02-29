@@ -144,6 +144,7 @@
             td += "<input class=\"user-input\" readonly type=\"number\" value='" + $(this).val() + "' name=\"\">";
             td += "</div></td></tr>";
             $("table." + id + " tbody").append(td);
+            $("table." + id).addClass("non-empty");
             updateFormData(id + "-pounds");
         }
     });
@@ -155,7 +156,7 @@
         $(".main-container").css({"opacity": "0.5"});
         var data = [];
         var pounds = [];
-        $(".dynamic-tables").each(function (ind) {
+        $(".dynamic-tables.non-empty").each(function (ind) {
             var table = $(this).attr("class").split(" ")[1];
             var tr = $(this).find("tr");
             if (tr.length > 0) {
